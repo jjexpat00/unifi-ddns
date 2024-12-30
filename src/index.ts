@@ -108,7 +108,8 @@ export default {
 			if (error instanceof HttpError) {
 				return new Response(error.message, { status: error.statusCode });
 			} else {
-				return new Response('Internal Server Error', { status: 500 });
+				// return new Response('Internal Server Error', { status: 500 });
+				return new Response(error.message, { status: 500 });
 			}
 		}
 	},
